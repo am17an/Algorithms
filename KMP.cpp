@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//Complexity - O(K+N) depending on bad the string is 
+//Complexity - O(N) - max 2N  
 
 void fillFailureFunction(const string & pattern, int * F){
 	F[0]=F[1] =0;
