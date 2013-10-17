@@ -16,7 +16,8 @@ inoremap <Up> <nop>
 inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
-colorscheme desert
-set background=dark
-
-:iabbrev includes #include <iostream><cr>#include <cstdio><cr><cr>using namespace std;
+:iabbrev cppincludes #include <iostream><cr>#include <cstdio><cr>#include <vector><cr>#include <sstream><cr>#include <map><cr>#include <cmath><cr>#include <algorithm><cr><cr>using namespace std;
+set wildmode=longest:full
+set wildmenu
+set expandtab
+set tabstop=4
