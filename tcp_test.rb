@@ -17,6 +17,11 @@ message += [4].pack("i>")
 message += ".z.T".bytes.pack("c*")
 sock.send(message,0)
 header = sock.recv 8
-rest_of_data = sock.recv 13 #hard coded
-p header
+data_size = header[4..7].unpack("i<")[0].to_i
+rest_of_data = sock.recv data_size #hard coded
 p rest_of_data
+data_type = rest_of_data[0].unpack("c")
+p data_type
+
+val = rest_of_data[1..4].unpack("i<")
+p val
