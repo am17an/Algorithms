@@ -252,8 +252,8 @@ class Qkdb
       -13 => lambda { Month.new _ri(bytearray)},
       -14 => lambda { _rd(bytearray)},
       -15 => lambda { _rdt(bytearray)},
-      -17 => lambda { Minute _ri(bytearray)},
-      -18 => lambda { Second _ri(bytearray)},
+      -17 => lambda { Minute.new _ri(bytearray)},
+      -18 => lambda { Second.new _ri(bytearray)},
       -19 => lambda { _rt(bytearray)},
       0 => lambda { _r(bytearray)},
       1 => lambda { _rb(bytearray)},
@@ -268,8 +268,8 @@ class Qkdb
       13 => lambda { Month.new _ri(bytearray)},
       14 => lambda { _rd(bytearray)},
       15 => lambda { _rdt(bytearray)},
-      17 => lambda { Minute _ri(bytearray)},
-      18 => lambda { Second _ri(bytearray)},
+      17 => lambda { Minute.new _ri(bytearray)},
+      18 => lambda { Second.new _ri(bytearray)},
       19 => lambda { _rt(bytearray)}
 
     }
