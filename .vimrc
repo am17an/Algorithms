@@ -12,9 +12,9 @@ set relativenumber
 set undofile
 set backspace=indent,eol,start
 let mapleader = ","
-
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set number numberwidth=3 " For setting the line number width
-" easier to map it to jk  
+" easier to map it to jk
 " basic mappings
 nnoremap / /\v
 vnoremap / /\v
@@ -23,8 +23,17 @@ set smartcase
 set hlsearch
 set incsearch
 set showmatch
+
 set hlsearch
+au VimEnter * echom "Hello Aman Gupta!"
+onoremap in( :<c-u>normal! f(vi(<cr>
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>cc :so ~/.vimrc<cr> 
+nnoremap <leader>vim :vs ~/.vimrc<CR>
+nnoremap <leader>o :edit 
 nnoremap <leader><space> :noh<cr>
+nnoremap cwd :cd %:p:h<cr>
+nnoremap lcwd :lcd %:p:h<cr>
 set nu
 set nocompatible
 inoremap jk <esc>
@@ -63,7 +72,6 @@ set shiftwidth=2
 set softtabstop=2
 " Shortcuts
 " For autocompletion, hackish
-inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     { 
 inoremap {}     {}
@@ -77,3 +85,4 @@ execute pathogen#infect()
 call pathogen#helptags() " generate helptags for everything in ‘runtimepath’
 nnoremap NN :NERDTreeToggle<CR>
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set laststatus =2
