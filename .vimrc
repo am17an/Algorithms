@@ -3,8 +3,8 @@ call pathogen#incubate()
 filetype plugin indent on
 syntax on
 " color
+set gfn=Monaco:h18
 let g:molokai_original = 1
-set background=dark
 set clipboard=unnamed
 let $BASH_ENV = "~/.bash_profile"
 set shell=/bin/bash\ --rcfile\ ~/.bash_profile
@@ -23,6 +23,7 @@ set smartcase
 set hlsearch
 set incsearch
 set showmatch
+set noswapfile
 
 set hlsearch
 au VimEnter * echom "Hello Aman Gupta!"
@@ -50,18 +51,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-" Training commmands
-inoremap <esc> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
-nnoremap Ajk <nop>
-" Wildmode
+"Wildmode
 set wildmode=longest:full
 set wildmenu
 " Tabs 
@@ -75,6 +65,9 @@ set softtabstop=2
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     { 
 inoremap {}     {}
+inoremap (      ()<esc>i
+inoremap ()     ()
+
 " Abbrev, must be a better way to do this
 :iabbrev cppincludes #include <iostream><cr>#include <cstdio><cr>#include <vector><cr>#include <sstream><cr>#include <map><cr>#include <cmath><cr>#include <algorithm><cr><cr>using namespace std;
 set pastetoggle=<C-P><C-P>
@@ -84,5 +77,10 @@ nnoremap H ^
 execute pathogen#infect()
 call pathogen#helptags() " generate helptags for everything in ‘runtimepath’
 nnoremap NN :NERDTreeToggle<CR>
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/plugin/emmet.vim
 set laststatus =2
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+

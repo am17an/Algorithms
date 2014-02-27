@@ -4,6 +4,7 @@
         ( (if(< (car l1) (car l2)) 
           (cons (car l1) (merge (cdr l1) l2))
           (cons (car l2) (merge l1 (cdr l2)))))))
+
 (define (length l)
   (if (null? l)
     0
@@ -25,3 +26,5 @@
     (merge (merge-sort (first-half l 0)) (merge-sort (second-half l 0)))))
 
 (merge-sort (list 3 2 1 4 5 7 9 12 14 18 23))
+
+(merge-sort ("Hello world'))
