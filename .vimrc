@@ -14,6 +14,7 @@ set backspace=indent,eol,start
 let mapleader = ","
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set number numberwidth=3 " For setting the line number width
+au BufRead,BufNewFile *.mmm setfiletype html
 " easier to map it to jk
 " basic mappings
 nnoremap / /\v
@@ -67,9 +68,11 @@ inoremap {{     {
 inoremap {}     {}
 inoremap (      ()<esc>i
 inoremap ()     ()
+nnoremap <leader>t :tabe 
+nnoremap <leader>co bi#{<esc>leli}<esc>
 
 " Abbrev, must be a better way to do this
-:iabbrev cppincludes #include <iostream><cr>#include <cstdio><cr>#include <vector><cr>#include <sstream><cr>#include <map><cr>#include <cmath><cr>#include <algorithm><cr><cr>using namespace std;
+autocmd FileType cpp :iabbrev <buffer> cppincludes #include <iostream><cr>#include <cstdio><cr>#include <vector><cr>#include <sstream><cr>#include <map><cr>#include <cmath><cr>#include <algorithm><cr><cr>using namespace std;
 set pastetoggle=<C-P><C-P>
 nnoremap L $
 nnoremap H ^
